@@ -162,7 +162,7 @@ var CityAutocomplete = (function($){
     this.calling = true;
 
     var data = $.extend({
-      "postalcode_startsWith": this.postalCodeInput.val(),
+      "postalcode": this.postalCodeInput.val(),
       "country": country
     }, CA.geonames);
 
