@@ -1,11 +1,13 @@
 var CityAutocomplete = (function($){
 
   var CA = function(countrySelect, postalCodeInput, citySelect, cityInput) {
+    var self = this;
+
     this.countrySelect = $("select[id='" + countrySelect + "']");
     this.countrySelect.change(this.toggleToEmptyState.bind(this));
 
     this.postalCodeInput = $("input[id='" + postalCodeInput + "']");
-    this.postalCodeInput.change(this.suggest.bind(this));
+    this.postalCodeInput.change(function(){ self.suggest() });
 
     this.suggestionList  = $("select[id='" + citySelect + "']");
     this.suggestionList.change(this.onSuggestionClick.bind(this));
